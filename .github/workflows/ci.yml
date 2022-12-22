@@ -36,6 +36,7 @@ jobs:
         FILE_CONTENT+="  }\n"
         FILE_CONTENT+="}\n"
         echo "${FILE_CONTENT}" > "terraform.tf"
+        cat terraform.tf
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
