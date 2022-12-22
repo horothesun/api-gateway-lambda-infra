@@ -32,7 +32,7 @@ jobs:
         CONTENT+="  required_version = \"${TERRAFORM_VERSION}\"\n"
         CONTENT+="  required_providers {\n"
         CONTENT+="    aws = {\n"
-        CONTENT+="      source     = \"hashicorp/aws\"\n"
+        CONTENT+="      source  = \"hashicorp/aws\"\n"
         CONTENT+="      version = \"=${TERRAFORM_AWS_PROVIDER_VERSION}\"\n"
         CONTENT+="    }\n"
         CONTENT+="  }\n"
