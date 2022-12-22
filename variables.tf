@@ -1,7 +1,7 @@
 # required parameters
 
 variable "lambda_name" {
-  description = "Lambda and ECR repo name."
+  description   = "Lambda and ECR repo name."
   type        = string
 }
 
