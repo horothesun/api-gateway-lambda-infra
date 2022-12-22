@@ -9,7 +9,7 @@ on:
 
 env:
   TERRAFORM_VERSION: 1.3.6
-  TERRAFORM_AWS_PROVIDER_VERSION: 4.48.0
+  TERRAFORM_AWS_PROVIDER_VERSION: 4.59.0
 
 concurrency:
   group: ${{ github.ref }}
@@ -28,16 +28,16 @@ jobs:
       env:
         TF_FILE: "terraform.tf"
       run: |
-        FILE_CONTENT="terraform {\n"
-        FILE_CONTENT+="  required_version = \"${TERRAFORM_VERSION}\"\n"
-        FILE_CONTENT+="  required_providers {\n"
-        FILE_CONTENT+="    aws = {\n"
-        FILE_CONTENT+="      source  = \"hashicorp/aws\"\n"
-        FILE_CONTENT+="      version = \"=${TERRAFORM_AWS_PROVIDER_VERSION}\"\n"
-        FILE_CONTENT+="    }\n"
-        FILE_CONTENT+="  }\n"
-        FILE_CONTENT+="}\n"
-        echo -e "${FILE_CONTENT}" > "${TF_FILE}"
+        CONTENT="terraform {\n"
+        CONTENT+="  required_version = \"${TERRAFORM_VERSION}\"\n"
+        CONTENT+="  required_providers {\n"
+        CONTENT+="    aws = {\n"
+        CONTENT+="      source  = \"hashicorp/aws\"\n"
+        CONTENT+="      version = \"=${TERRAFORM_AWS_PROVIDER_VERSION}\"\n"
+        CONTENT+="    }\n"
+        CONTENT+="  }\n"
+        CONTENT+="}\n"
+        echo -e "${CONTENT}" > "${TF_FILE}"
         cat "${TF_FILE}"
 
     - name: Setup Terraform
