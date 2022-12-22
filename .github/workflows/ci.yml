@@ -26,37 +26,19 @@ jobs:
 
     - name: Create terraform.tf
       env:
-        TERRAFORM_FILE: "terraform.tf"
+        TF_FILE: "terraform.tf"
       run: |
-        touch "${TERRAFORM_FILE}"
-        echo "terraform {" >> "${TERRAFORM_FILE}"
-        echo "  required_version = \"${TERRAFORM_VERSION}\"" >> "${TERRAFORM_FILE}"
-        echo "  required_providers {" >> "${TERRAFORM_FILE}"
-        echo "    aws = {" >> "${TERRAFORM_FILE}"
-        echo "      source  = \"hashicorp/aws\"" >> "${TERRAFORM_FILE}"
-        echo "      version = \"=${TERRAFORM_AWS_PROVIDER_VERSION}\"" >> "${TERRAFORM_FILE}"
-        echo "    }" >> "${TERRAFORM_FILE}"
-        echo "  }" >> "${TERRAFORM_FILE}"
-        echo "}" >> "${TERRAFORM_FILE}"
-        cat "${TERRAFORM_FILE}"
-
-    - name: Create main.tf
-      env:
-        MAIN_FILE: "main.tf"
-      run: |
-        touch "${MAIN_FILE}"
-        echo "module \"demo_api_gateway_lambda\" {" >> "${MAIN_FILE}"
-        echo "  source = \"github.com/horothesun/api-gateway-lambda-infra\"" >> "${MAIN_FILE}"
-        echo "" >> "${MAIN_FILE}"
-        echo "  lambda_name                = \"demo-api-gateway-lambda\"" >> "${MAIN_FILE}"
-        echo "  lambda_memory_MB           = 512" >> "${MAIN_FILE}"
-        echo "  lambda_logs_retention_days = \"7\"" >> "${MAIN_FILE}"
-        echo "  http_method                = \"GET\"" >> "${MAIN_FILE}"
-        echo "  http_route                 = \"/time\"" >> "${MAIN_FILE}"
-        echo "  http_timeout_seconds       = 30" >> "${MAIN_FILE}"
-        echo "  apigw_logs_retention_days  = 7" >> "${MAIN_FILE}"
-        echo "}" >> "${MAIN_FILE}"
-        cat "${MAIN_FILE}"
+        FILE_CONTENT="terraform {\n"
+        FILE_CONTENT+="  required_version = \"${TERRAFORM_VERSION}\"\n"
+        FILE_CONTENT+="  required_providers {\n"
+        FILE_CONTENT+="    aws = {\n"
+        FILE_CONTENT+="      source  = \"hashicorp/aws\"\n"
+        FILE_CONTENT+="      version = \"=${TERRAFORM_AWS_PROVIDER_VERSION}\"\n"
+        FILE_CONTENT+="    }\n"
+        FILE_CONTENT+="  }\n"
+        FILE_CONTENT+="}\n"
+        echo -e "${FILE_CONTENT}" > "${TF_FILE}"
+        cat "${TF_FILE}"
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
