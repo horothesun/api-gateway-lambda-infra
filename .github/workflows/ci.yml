@@ -45,11 +45,11 @@ jobs:
       with:
         terraform_version: ${{ env.TERRAFORM_VERSION }}
 
-    - name: Format check
+    - name: Terraform format check
       run: terraform fmt -check -recursive .
 
-    - name: Init
+    - name: Terraform init
       run: terraform init -backend=false
 
-    - name: Validate
+    - name: Terraform validate
       run: terraform validate
