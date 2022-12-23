@@ -3,5 +3,5 @@ output "ecr_repo_arn" {
 }
 
 output "lambda_function_arn" {
-  value = aws_lambda_function.lambda.arn
+  value = var.initial_setup ? "" : aws_lambda_function.lambda[0].arn
 }
