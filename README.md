@@ -35,5 +35,5 @@ module "demo_api_gateway_lambda" {
 - Remove `initial_setup` from your configuration (defaulting it to `false`).
 - Update your AWS OIDC for GitHub workflows role by adding the permission
   referencing `lambda_function_arn` as well.
-- Apply the Terraform changes.
+- Apply the Terraform changes again.
 - Run the service CI pipeline again to update the lambda with the latest ECR image.
