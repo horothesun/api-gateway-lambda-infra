@@ -50,6 +50,8 @@ resource "aws_ecr_repository_policy" "ecr_repo_policy" {
 }
 
 data "aws_ecr_image" "ecr_image" {
+  count = var.initial_setup ? 0 : 1
+
   repository_name = aws_ecr_repository.ecr_repo.name
   image_tag       = "latest"
 }
