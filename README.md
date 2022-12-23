@@ -21,5 +21,6 @@ module "demo_api_gateway_lambda" {
   apigw_logs_retention_days  = 7
   burst_limit_rps            = 1
   rate_limit_rps             = 1
+  initial_setup              = true # TODO: remove once a 'latest' tagged ECR image is available
 }
 ```

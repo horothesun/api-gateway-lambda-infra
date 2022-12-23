@@ -53,3 +53,9 @@ variable "rate_limit_rps" {
   type        = number
   default     = 1
 }
+
+variable "initial_setup" {
+  description = "If set to `true`, the ECR image is not going to be configured."
+  type        = bool
+  default     = false
+}
