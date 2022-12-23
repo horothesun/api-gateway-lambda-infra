@@ -55,7 +55,7 @@ variable "rate_limit_rps" {
 }
 
 variable "initial_setup" {
-  description = "If set to `true`, the ECR image is not going to be configured."
+  description = "If set to `true`, only the ECR repo is going to be created, allowing to publish the first image."
   type        = bool
   default     = false
 }
