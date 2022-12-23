@@ -6,7 +6,7 @@
 
 [horothesun/api-gateway-lambda-cookiecutter-template](https://github.com/horothesun/api-gateway-lambda-cookiecutter-template)
 
-## Usage
+## Setup
 
 - Add the following block to your infrastructure code
 
