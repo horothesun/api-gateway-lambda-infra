@@ -8,8 +8,8 @@ on:
   workflow_dispatch: # enable manual execution
 
 env:
-  TERRAFORM_VERSION: 1.6.3
-  TERRAFORM_AWS_PROVIDER_VERSION: 5.24.0
+  TERRAFORM_VERSION: 1.6.4
+  TERRAFORM_AWS_PROVIDER_VERSION: 5.25.0
 
 concurrency:
   group: ${{ github.ref }}
