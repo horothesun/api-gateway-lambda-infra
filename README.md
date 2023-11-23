@@ -4,7 +4,7 @@
 
 ## Code template
 
-[horothesun/api-gateway-lambda-cookiecutter-template](https://github.com/horothesun/api-gateway-lambda-cookiecutter-template)
+[horothesun/api-gateway-lambda-template.g8](https://github.com/horothesun/api-gateway-lambda-template.g8)
 
 ## Setup
 
