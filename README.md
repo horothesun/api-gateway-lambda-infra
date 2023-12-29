@@ -1,6 +1,7 @@
 # API Gateway triggered Lambda infrastructure
 
 [![CI](https://github.com/horothesun/api-gateway-lambda-infra/actions/workflows/ci.yml/badge.svg)](https://github.com/horothesun/api-gateway-lambda-infra/actions/workflows/ci.yml)
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg?style=flat-square)](https://renovatebot.com)
 
 ## Code template
 
