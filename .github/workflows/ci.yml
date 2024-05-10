@@ -8,8 +8,8 @@ on:
   workflow_dispatch: # enable manual execution
 
 env:
-  TERRAFORM_VERSION: 1.8.2
-  TERRAFORM_AWS_PROVIDER_VERSION: 5.47.0
+  TERRAFORM_VERSION: 1.8.3
+  TERRAFORM_AWS_PROVIDER_VERSION: 5.49.0
 
 concurrency:
   group: ${{ github.ref }}
@@ -33,7 +33,7 @@ jobs:
         CONTENT+="  required_providers {\n"
         CONTENT+="    aws = {\n"
         CONTENT+="      source  = \"hashicorp/aws\"\n"
-        CONTENT+="      version = \"=${TERRAFORM_AWS_PROVIDER_VERSION}\"\n"
+        CONTENT+="      version = \"${TERRAFORM_AWS_PROVIDER_VERSION}\"\n"
         CONTENT+="    }\n"
         CONTENT+="  }\n"
         CONTENT+="}\n"
